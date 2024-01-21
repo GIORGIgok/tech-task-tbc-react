@@ -1,0 +1,930 @@
+/* ---GG----------------- ROOT COLORS -----------------GG--- */
+:root {
+    --header-primary-bg: #1a1e1f;
+    --header-transparent-bg: #22201fee;
+    --header-height: 84px;
+    --links-primary: #00a3e0;
+    --links-secondary: #00aef3;
+    --text-white: #f4f4f4;
+    --primary-bg: #161616;
+    --secondary-bg: #2b2b2b;
+    --footer-bg: #1a1e1f;
+    --btn-primary: #03aff3;
+}
+/* ----------------------   /\/\/\   ---------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ---------------------- HEADER ---------------------- */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--header-height);
+    background-color: var(--header-primary-bg);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+/* adding this class using js on scrolldown*/
+.transparent {
+    background-color: var(--header-transparent-bg);
+}
+
+/* tbc-usaid logo.svg */
+header figure img {
+    max-width: 100%;
+    width: 182px;
+    height: 40px;
+}
+
+header figure img:hover {
+    cursor: pointer;
+}
+
+/* unordered list */
+header nav ul {
+    list-style: none;
+    display: flex;
+    align-items: baseline;
+    gap: 48px;
+}
+
+/* links in list items */
+header nav ul li a {
+    color: var(--text-white);
+    text-decoration: none;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: var(--links-primary);
+    cursor: pointer;
+}
+
+/* hardcode for making 3rd link look like active */
+header nav ul li:nth-child(3) a {
+    color: var(--links-primary);
+}
+
+.burger-menu {
+    display: none;
+}
+
+/* ---G------------------ MAIN ------------------G--- */
+main {
+    margin-top: var(--header-height);
+}
+
+/* ----- Hero-section ----- */
+.hero-tbc {
+    float: left;
+    width: 100%;
+    position: relative;
+}
+
+.hero-tbc figure {
+    float: left;
+    width: 100%;
+}
+
+/* hero bg img */
+.hero-tbc figure img {
+    float: left;
+    object-fit: cover;
+    width: 100%;
+}
+
+/* -- hero-heading -- */
+.hero-heading {
+    position: absolute;
+    z-index: 1;
+    top: 30%;
+    left: 13%;
+}
+
+/* applying same styles to both */
+.upper-heading,
+.lower-heading {
+    display: block;
+    color: var(--text-white);
+    font-weight: 900;
+    font-size: 36px;
+}
+
+.upper-heading {
+    margin-bottom: 12px;
+}
+
+.menu-content {
+    display: none;
+}
+
+/*----- About-section -----*/
+.about-project {
+    float: left;
+    width: 100%;
+    background-color: var(--secondary-bg);
+    padding: 4% 14%;
+}
+
+.about-project article {
+    float: left;
+}
+
+/* about project text */
+.about-project article span {
+    display: block;
+    letter-spacing: 0.5px;
+    font-size: 30px;
+    color: var(--text-white);
+    line-height: 1.5;
+}
+
+/* about project read more link */
+.about-project article a {
+    display: inline-block;
+    color: var(--links-secondary);
+    text-decoration: none;
+    font-size: 20px;
+    letter-spacing: 0.8px;
+    font-weight: 800;
+    margin-top: 30px;
+    transition: all 0.3s ease;
+}
+
+.about-project article a:hover {
+    cursor: pointer;
+    color: #bebebe;
+}
+
+/*----- Courses-section -----*/
+.courses-section {
+    float: left;
+    width: 100%;
+    background-color: var(--primary-bg);
+    padding: 4% 14%;
+}
+
+/* heading */
+.courses-section .courses-heading {
+    float: left;
+    color: var(--text-white);
+    font-size: 24px;
+}
+
+/* cards' parent */
+#cards-parent {
+    float: left;
+    width: 100%;
+    margin-top: 58px;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* card */
+.courses-card {
+    width: 300px;
+    height: 414px;
+    border: 1px solid #555555;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    position: relative;
+}
+
+/* card figure */
+.courses-card figure {
+    width: 100%;
+}
+
+/* card img */
+.courses-card figure img {
+    float: left;
+    width: 100%;
+    object-fit: cover;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+/* card details */
+.card-dets {
+    padding: 12px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* card descriptions */
+.card-description,
+.card-status {
+    color: var(--text-white);
+}
+
+.card-description {
+    font-size: 19px;
+}
+
+.card-status {
+    font-size: 15px;
+}
+
+.card-btn-parent {
+    position: absolute;
+    left: 0;
+    bottom: 24px;
+    padding-inline: 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.card-btn-parent figure {
+    margin-top: 4px;
+    width: fit-content;
+}
+
+/* arrow img */
+.card-btn-parent figure img {
+    width: 16px;
+    height: 12.8px;
+}
+
+#card-btn-txt {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--links-primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#card-btn-txt:hover {
+    cursor: pointer;
+    color: #0083b3;
+}
+
+/*----- Partners-section / Carousel -----*/
+.partners-section {
+    float: left;
+    width: 100%;
+    height: 100%;
+    height: 364px;
+    background-color: var(--secondary-bg);
+    display: flex;
+    flex-direction: column;
+    gap: 91px;
+}
+
+/* heading */
+.partners-heading {
+    float: left;
+    color: var(--text-white);
+    font-size: 24px;
+    padding: 4% 0 0 15%;
+}
+
+/* partners carousel container */
+.carousel-container {
+    float: left;
+    width: 100%;
+    padding-inline: 7%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.slide {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    aspect-ratio: 33 / 3;
+}
+
+.slide figure {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: all 1s ease-in-out;
+}
+
+.slide img {
+    width: fit-content;
+}
+
+/* arrow buttons */
+.carousel-container button {
+    background-color: transparent;
+    border: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+.carousel-container button:hover {
+    cursor: pointer;
+    opacity: 75%;
+}
+
+/* left arrow btn */
+.left {
+    left: 7%;
+}
+
+.right {
+    right: 7%;
+}
+
+/* rotating right arrow */
+#r-arrow {
+    transform: rotate(180deg);
+}
+
+/*----- F.A.Q. section -----*/
+.faq-section {
+    float: left;
+    width: 100%;
+    background-color: var(--primary-bg);
+    padding: 4% 15%;
+}
+
+.faq-h-parent {
+    float: left;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* frequently asked */
+.faq-heading {
+    float: left;
+    color: var(--text-white);
+    font-size: 24px;
+}
+
+/* all questions */
+.faq-all {
+    float: right;
+    color: var(--links-secondary);
+    font-size: 23px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.faq-all:hover {
+    cursor: pointer;
+    color: #bebebe;
+}
+
+/* tbc-accordion */
+.accordion-parent {
+    float: left;
+    width: 100%;
+}
+
+.tbc-accordion {
+    float: left;
+    width: 100%;
+    border-bottom: 1px solid #353131;
+}
+
+.tbc-accordion .title {
+    padding: 20px 0;
+    font-size: 18px;
+    cursor: pointer;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.title #accordion-image {
+    transition: all 0.3s ease-in-out;
+}
+
+.active .title #accordion-image {
+    transform: rotate(180deg);
+}
+
+/* accordion content */
+.accordion-content {
+    float: left;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.active .accordion-content {
+    /*using max-height, not display for animation */
+    /* display doesn't support animation */
+    max-height: 1700px;
+    padding: 20px 0;
+}
+
+#answer {
+    float: left;
+    color: var(--text-white);
+    font-size: 16px;
+}
+
+.accordion-content ul {
+    float: left;
+    list-style: none;
+    padding-left: 18px;
+}
+
+.accordion-content ul li {
+    float: left;
+    font-size: 16px;
+    color: var(--text-white);
+    margin-block: 18px;
+}
+
+/* -- faq-all responsive */
+.faq-all-responsive {
+    float: left;
+    display: none;
+    width: 100%;
+}
+
+/* -G-------------------- FOOTER --------------------G- */
+
+footer {
+    float: left;
+    width: 100%;
+    height: 228px;
+    background-color: var(--footer-bg);
+    padding: 4% 14%;
+}
+
+#f-logo-figure {
+    width: 100%;
+}
+
+/* footer logo img */
+#f-logo-figure img {
+    width: 106px;
+    height: 30px;
+}
+
+.f-content {
+    display: flex;
+}
+
+/* << footer copyright side */
+.f-copy-left {
+    width: 50%;
+}
+
+.f-copy-left > p,
+.f-copy-left > p:nth-child(2) a {
+    color: var(--text-white);
+    font-size: 15px;
+    margin-block: 28px;
+    text-decoration: none;
+}
+
+/* hover effect for rights */
+.f-copy-left p:nth-child(2) a {
+    transition: all 0.3s ease;
+}
+
+.f-copy-left p:nth-child(2) a:hover {
+    cursor: pointer;
+    color: rgb(145, 145, 145);
+}
+
+/* >> footer social media side */
+.f-soc-right {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 28px;
+}
+
+.soc-icons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+/* contact us btn */
+.contact-us > a {
+    float: left;
+    background-color: var(--btn-primary);
+    font-size: 18px;
+    padding: 11px 40px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--text-white);
+    transition: all 0.3s ease;
+}
+
+.contact-us > a:hover {
+    color: rgb(39, 39, 39);
+    background-color: #bebebe;
+}
+
+/* ---------GG-----------------------------GG--------- */
+/* ------------------------GG------------------------- */
+/* --------- Queries for tablets and desktop --------- */
+
+@media screen and (min-width: 992px) and (max-width: 1064px) {
+    /*----- Partners-section/carousel ----- */
+    .slide figure img {
+        width: 80%;
+    }
+}
+
+/* ------------------------------------------------------- */
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    /*----- Hero-section -----*/
+    .hero-heading {
+        top: 20%;
+        left: 8%;
+    }
+    .upper-heading,
+    .lower-heading {
+        font-size: 32px;
+    }
+
+    /*----- About-section -----*/
+    .about-project {
+        padding: 4% 8%;
+    }
+    /* about project txt */
+    .about-project article span {
+        font-size: 24px;
+    }
+    /* read more lnk */
+    .about-project article a {
+        font-size: 16px;
+    }
+
+    /*----- Courses-section -----*/
+    .courses-section {
+        padding: 4% 8%;
+    }
+
+    .courses-card {
+        width: 285px;
+        height: 398px;
+    }
+
+    /*----- Partners-section/carousel ----- */
+    .slide {
+        width: 85%;
+        gap: 68px;
+    }
+
+    .slide figure img {
+        width: 95%;
+    }
+    .partners-heading {
+        padding: 4% 0 0 8%;
+    }
+
+    /*----- F.A.Q-section -----*/
+    .faq-section {
+        padding: 4% 8%;
+    }
+
+    /* all questions (span) */
+    .faq-all {
+        font-size: 21px;
+    }
+}
+
+/* --------- Queries for mobiles and tablets --------- */
+@media screen and (max-width: 768px) {
+    header {
+        justify-content: space-between;
+        padding-inline: 5%;
+    }
+
+    /*-------- HEADER --------*/
+    .hero-tbc {
+        min-height: 217px;
+    }
+
+    .hero-tbc figure {
+        float: left;
+        width: 100%;
+        height: 217px;
+    }
+
+    .hero-tbc figure img {
+        float: left;
+        width: 100%;
+        height: 100%;
+    }
+
+    header nav {
+        display: none;
+    }
+
+    /* Responsive burger menu */
+    .burger-menu {
+        height: 26px;
+        width: 32px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: fixed;
+        top: 30px;
+        right: 32px;
+        z-index: 25;
+        transition: all 0.33s ease-out;
+    }
+
+    /* dark overlay when menu-content is open */
+    .dark-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgb(0, 0, 0, 0.5);
+        z-index: 10;
+    }
+
+    /* burger menu lines */
+    .bm-line1,
+    .bm-line2,
+    .bm-line3 {
+        background-color: #dbdbdb;
+        border-radius: 8.5px;
+        height: 4px;
+        transition: all 0.3s ease-out;
+    }
+
+    .bm-line1 {
+        align-self: flex-start;
+        width: 50%;
+        transform-origin: right;
+    }
+
+    .bm-line2 {
+        align-self: center;
+        width: 100%;
+    }
+
+    .bm-line3 {
+        align-self: flex-end;
+        width: 50%;
+        transform-origin: left;
+    }
+
+    /* rotate lines when menu is clicked */
+    .burger-menu.clicked .bm-line1 {
+        transform: translateY(0px) translateX(-10px) rotate(-135deg);
+        background-color: #8f8f8f;
+    }
+
+    .burger-menu.clicked .bm-line2 {
+        transform: rotate(135deg);
+        background-color: #8f8f8f;
+    }
+
+    .burger-menu.clicked .bm-line3 {
+        transform: translateY(-11px) rotate(45deg);
+        background-color: #8f8f8f;
+    }
+
+    /* aside sliding menu */
+    .menu-content {
+        display: block;
+        z-index: 20;
+        position: fixed;
+        padding: 92px 18px 0 0;
+        top: 0;
+        right: -85%;
+        width: 250px;
+        height: 100%;
+        background-color: #222222;
+        transition: right 0.3s ease-out;
+    }
+
+    .menu-content nav {
+        float: right;
+    }
+
+    .menu-content ul {
+        list-style: none;
+        float: right;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 34px;
+    }
+
+    .menu-content ul li a {
+        color: var(--text-white);
+        text-decoration: none;
+        font-size: 18px;
+    }
+
+    .menu-content ul li a:hover {
+        color: var(--links-primary);
+        cursor: pointer;
+    }
+
+    .menu-content ul li:nth-child(3) a {
+        color: var(--links-primary);
+    }
+
+    /*----- About-section -----*/
+    .about-project {
+        padding: 4% 5%;
+    }
+
+    /*----- Courses-section -----*/
+    .courses-section {
+        padding: 4% 5%;
+    }
+
+    #cards-parent {
+        flex-direction: column;
+        align-items: center;
+        justify-content: unset;
+    }
+
+    /* cards */
+    .courses-card {
+        width: 100%;
+    }
+
+    /* card imgs */
+    .courses-card figure img {
+        max-height: 200px;
+    }
+
+    /*----- Partners-section/carousel -----*/
+    .partners-section {
+        gap: 42px;
+        padding-bottom: 18px;
+    }
+
+    .partners-heading {
+        padding-left: unset;
+        text-align: center;
+    }
+
+    .slide {
+        aspect-ratio: 6 / 5;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .slide figure img {
+        width: 75%;
+    }
+
+    /*----- F.A.Q.-section-----*/
+    .faq-section {
+        padding: 4% 5%;
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+    /*----- Hero-section -----*/
+    .hero-heading {
+        top: 20%;
+        left: 5%;
+    }
+
+    .upper-heading,
+    .lower-heading {
+        font-size: 26px;
+    }
+
+    /* about project txt */
+    .about-project article span {
+        font-size: 21px;
+    }
+
+    /* read more lnk */
+    .about-project article a {
+        font-size: 16px;
+    }
+
+    /*----- F.A.Q-section ----- */
+
+    .faq-all {
+        font-size: 18px;
+    }
+}
+
+/*----- queries for only mobile -----*/
+@media screen and (max-width: 576px) {
+    /* HEADER */
+
+    .hero-heading {
+        left: 5%;
+        top: 25%;
+    }
+
+    .upper-heading {
+        font-size: 24px;
+    }
+
+    .lower-heading {
+        font-size: 22px;
+    }
+
+    .menu-content {
+        right: -90%;
+    }
+
+    /*----- About-section -----*/
+    .about-project article span,
+    .about-project article a {
+        font-size: 17px;
+    }
+
+    /*----- F.A.Q-section -----*/
+    .faq-all {
+        display: none;
+    }
+
+    .faq-all-responsive {
+        float: left;
+        display: block;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .faq-all {
+        float: unset;
+    }
+
+    .faq-all-responsive a {
+        display: block;
+        text-align: center;
+        margin-block: 24px;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    /* FOOTER */
+    footer {
+        padding: 4% 5%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 14px;
+        height: auto;
+    }
+
+    #f-logo-figure {
+        width: 100%;
+        height: fit-content;
+        padding-inline: 12px;
+    }
+
+    .f-content {
+        flex-direction: column;
+    }
+
+    .f-soc-right {
+        order: 1;
+        margin-block: 12px;
+        flex-direction: row-reverse;
+        align-items: center;
+        width: unset;
+    }
+
+    .contact-us {
+        height: 100%;
+    }
+
+    .contact-us a {
+        padding: 8px 37px;
+    }
+
+    .f-copy-left {
+        order: 2;
+        width: unset;
+    }
+}
