@@ -1,4 +1,5 @@
 # TBC x USAID - Tech. Task(React)
+[LIVE DEMO](https://giorgigok.github.io/tech-task-tbc-react/)
 
 Project Structure:
 -----------------
@@ -43,7 +44,7 @@ Project follows the instructions, using only HTML, CSS, and Vanilla JavaScript. 
 Follow these steps to run the project locally:
 
 #### Clone the Repository
-    git clone https://github.com/GIORGIgok/tbc-tech-task.git
+    git clone https://github.com/GIORGIgok/tech-task-tbc-react.git
 
 #### Navigate to the Project Directory
     cd TBC Tech Task Project
