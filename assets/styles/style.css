@@ -794,7 +794,7 @@ footer {
     .slide {
         aspect-ratio: 6 / 5;
         flex-direction: column;
-        gap: 24px;
+        gap: 16px;
     }
 
     .slide figure img {
