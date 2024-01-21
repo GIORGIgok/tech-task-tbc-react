@@ -37,6 +37,10 @@ window.addEventListener("scroll", function() {
         burgerMenu.style.top = "30px";
     }
 
+    if (currentScrollPos >= 84) {
+        header.style.top = "0";
+    }
+
     // updating scroll position
     prevScrollPos = currentScrollPos;
 });
