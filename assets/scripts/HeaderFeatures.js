@@ -17,24 +17,26 @@ window.addEventListener("scroll", handleScroll);
 
 // hiding header on scroll when the window is smaller than 768px
 let prevScrollPos = window.scrollY;
+let isHeaderVisible = true;
 const header = document.querySelector("header");
 
-window.addEventListener("scroll", function () {
+window.addEventListener("scroll", function() {
     let currentScrollPos = window.scrollY;
 
     if (window.innerWidth <= 768) {
+
         if (prevScrollPos > currentScrollPos) {
             header.style.top = "0";
             burgerMenu.style.top = "30px";
+            isHeaderVisible = true;
         } else {
-            header.style.top = "-84px";
-            burgerMenu.style.top = "-84px";
+            if (isHeaderVisible && currentScrollPos >= 84) {
+                header.style.top = "-84px";
+                burgerMenu.style.top = "-30px";
+                isHeaderVisible = false;
+            }
         }
 
-        if (currentScrollPos >= 84) {
-            header.style.top = "0";
-        }
-        
     } else {
         header.style.top = "0";
         burgerMenu.style.top = "30px";
@@ -43,6 +45,7 @@ window.addEventListener("scroll", function () {
     // updating scroll position
     prevScrollPos = currentScrollPos;
 });
+
 
 // ---------------------------------------------------- \\
 
