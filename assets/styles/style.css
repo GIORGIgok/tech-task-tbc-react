@@ -868,6 +868,10 @@ footer {
         display: none;
     }
 
+    .faq-h-parent {
+        margin-block: 20px;
+    }
+
     .faq-all-responsive {
         float: left;
         display: block;

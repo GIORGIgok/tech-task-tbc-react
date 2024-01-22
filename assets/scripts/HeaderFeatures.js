@@ -36,10 +36,6 @@ window.addEventListener("scroll", function() {
                 isHeaderVisible = false;
             }
         }
-
-    } else {
-        header.style.top = "0";
-        burgerMenu.style.top = "30px";
     }
 
     // updating scroll position
