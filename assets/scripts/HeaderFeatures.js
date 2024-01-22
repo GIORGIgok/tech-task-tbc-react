@@ -25,7 +25,7 @@ window.addEventListener("scroll", function() {
 
     if (window.innerWidth <= 768) {
 
-        if (prevScrollPos > currentScrollPos) {
+        if (prevScrollPos > currentScrollPos || menuVisible) {
             header.style.top = "0";
             burgerMenu.style.top = "30px";
             isHeaderVisible = true;
@@ -41,7 +41,6 @@ window.addEventListener("scroll", function() {
     // updating scroll position
     prevScrollPos = currentScrollPos;
 });
-
 
 // ---------------------------------------------------- \\
 
