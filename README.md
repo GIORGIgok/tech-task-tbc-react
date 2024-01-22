@@ -59,6 +59,6 @@ for Linux
 for macOS
 - `open index.html`
 
-or just Double-click on on the index.html file in project's folder.
+or just Double-click on the index.html file in project's folder.
 
 Now you are ready to explore and interact with the project in your web browser.
